@@ -59,7 +59,12 @@
              `;
 
             main.append(card)
+            emitEvent(`Card ${cardIdNumber} created`);
           }
+        }
+
+        function emitEvent(message) {
+          window.parent.postMessage(message);
         }
 
         initScrollWatcher();
